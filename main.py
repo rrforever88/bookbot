@@ -7,15 +7,32 @@ def get_book_text(path_to_file):
     return file_contents
 
 
+def print_report(path, word_count, sorted_list):
+
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+
+    for i in sorted_list:
+        if i[0].isalpha():
+            print(f"{i[0]}: {i[1]}")
+
+    print("============= END ===============")
+
+
 def main():
+    path = "books/frankenstein.txt"
     book_text = get_book_text("books/frankenstein.txt")
 
     print(get_book_text("books/frankenstein.txt"))
-    word_count(book_text)
 
     get_chars = char_count(book_text)
 
+    words = word_count(book_text)
+
     sorted_chars = chars_dict_to_sorted_list(get_chars)
-    print(sorted_chars)
+    print_report(path, words, sorted_chars)
 
 main()

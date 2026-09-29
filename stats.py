@@ -2,7 +2,7 @@ def word_count(string):
     words = string.split()
     count = len(words)
 
-    print(f"Found {count} total words")
+    return count
 
 
 def char_count(string: str) -> dict[str, int]:
