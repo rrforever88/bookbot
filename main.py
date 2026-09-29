@@ -1,4 +1,4 @@
-from stats import word_count, char_count
+from stats import word_count, char_count, chars_dict_to_sorted_list
 
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
@@ -12,7 +12,10 @@ def main():
 
     print(get_book_text("books/frankenstein.txt"))
     word_count(book_text)
+
     get_chars = char_count(book_text)
-    print(get_chars)
+
+    sorted_chars = chars_dict_to_sorted_list(get_chars)
+    print(sorted_chars)
 
 main()
